@@ -3,7 +3,7 @@ document.getElementById('getWeather').addEventListener('click', getWeather);
 async function getWeather() {
     try {
         const city = document.getElementById('city').value;
-        const apiKey = '456a04206539076901dd150ac5393418 0'; // Replace with your OpenWeatherMap API key
+        const apiKey = '456a04206539076901dd150ac5393418'; // Replace with your OpenWeatherMap API key
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`; // Added &units=metric for Celsius
 
         const response = await fetch(url); // Fixed syntax here
@@ -25,5 +25,7 @@ function displayWeather(data) {
         <p>Temperature: ${main.temp}°C</p>
         <p>Condition: ${weather[0].description}</p>
     `;
+
+   
     document.getElementById('weatherResult').innerHTML = result;
 }
